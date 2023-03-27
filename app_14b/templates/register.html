@@ -1,0 +1,63 @@
+{% extends 'contact.html' %}
+{% block content %}
+<!-- Login/Register -->
+
+</div>
+<!-- Nav End -->
+
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Search Area Start ##### -->
+<div class="bueno-search-area section-padding-100-0 pb-70 bg-img" style="background-image: url(../static/img/core-img/pattern.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="{% url 'retrievedata' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="form-group mb-30">
+                                <input type="text" class="form-control" id="recipe" name="username" placeholder="Enter UserName">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="form-group mb-30">
+                                <input type="password" class="form-control" id="vegan" name="password" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="form-group mb-30">
+                                <input type="text" class="form-control" id="vegan" name="fullname" placeholder="Enter fullname">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="form-group mb-30">
+                                <input type="email" class="form-control" id="vegan" name="e_mail" placeholder="Enter your email ID">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="form-group mb-30">
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                            <div>
+                                <input type="submit" style="margin-left: 420px;" class="btn bueno-btn w-50">
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Search Area End ##### -->
+{% endblock %}

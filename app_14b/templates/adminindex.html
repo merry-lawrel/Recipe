@@ -1,0 +1,555 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Green Recipes</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/logo.jpg' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-content">
+            <h3>Cooking in progress..</h3>
+            <div id="cooking">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div id="area">
+                    <div id="sides">
+                        <div id="pan"></div>
+                        <div id="handle"></div>
+                    </div>
+                    <div id="pancake">
+                        <div id="pastry"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header-area bg-img bg-overlay" style="background-image: url(../static/img/bg-img/header.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-between">
+                    <div class="col-12 col-sm-6">
+                        
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-5 col-xl-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo Area -->
+        <div class="logo-area">
+            <a href="index.html"><img src="{% static 'img/logo.jpg' %}" style="height: 200px; width: 200px;" alt="logo"></a>
+        </div>
+{% block content %}
+        <!-- Navbar Area -->
+        <div class="bueno-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="buenoNav">
+
+                        <!-- Toggler -->
+                        <div id="toggler"><img src="{% static 'img/core-img/toggler.png' %}" alt=""></div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{% url 'adminindex' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'viewrecipe' %}">Recipes</a>
+                                    <!-- <li><a href="#">Recipe Details</a>
+                                        <select class="dropdown">
+                                            <option>Recipes</option>
+                                            {% for i in data %}
+                                            <option value="{{i.recipe_name}}"><a href="#">{{i.recipe_name}}</a></option>
+                                            {% endfor %}
+                                        </select>
+                                    </li> -->
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            
+                                <!-- Login/Register -->
+                                {% if 'uid' in request.session %}
+                                <div class="login-area">
+                                    <a href="{% url 'register' %}">Hello, {{request.session.username}}</a>
+                                </div>
+                                <div class="login-area">
+                                    <a href="{% url 'logout' %}">Logout</a>
+                                </div>
+                                {% else %}
+                                <div class="login-area">
+                                    <a href="{% url 'login' %}">Login</a>
+                                </div>
+                                <div class="login-area">
+                                    <a href="{% url 'register' %}">Register</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ##### Treading Post Area Start ##### -->
+    <div class="treading-post-area" id="treadingPost">
+        <div class="close-icon">
+            <i class="fa fa-times"></i>
+        </div>
+
+        <h4>Treading Post</h4>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/9.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Friend eggs with ham</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/10.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Mushrooms with pork chop</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/11.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Birthday cake with chocolate</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/9.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Friend eggs with ham</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/10.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Mushrooms with pork chop</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="single-blog-post style-1 d-flex flex-wrap mb-30">
+            <!-- Blog Thumbnail -->
+            <div class="blog-thumbnail">
+                <img src="{% static 'img/bg-img/11.jpg' %}" alt="">
+            </div>
+            <!-- Blog Content -->
+            <div class="blog-content">
+                <a href="#" class="post-tag">The Best</a>
+                <a href="#" class="post-title">Birthday cake with chocolate</a>
+                <div class="post-meta">
+                    <a href="#" class="post-date">July 11, 2018</a>
+                    <a href="#" class="post-author">By Julia Stiles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Treading Post Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <div class="hero-area">
+        <!-- Hero Post Slides -->
+        <div class="hero-post-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <!-- Blog Thumbnail -->
+                <div class="blog-thumbnail">
+                    <a href="#"><img src="{% static '/img/chocolate_molten_cake.jpg' %}" style="height: 480px; width: 480px;" alt=""></a>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="blog-content-bg">
+                    <div class="blog-content">
+                        <a href="#" class="post-tag">Green Recipes</a>
+                        <a href="#" class="post-title">Easy Mouth Watering Recipes</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                            <a href="#" class="post-author">By Celine Glory</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <!-- Blog Thumbnail -->
+                <div class="blog-thumbnail">
+                    <a href="#"><img src="{% static 'Chicken-shawarma-salad-4.jpg' %}" style="height: 480px; width: 480px;" alt=""></a>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="blog-content-bg">
+                    <div class="blog-content">
+                        <a href="#" class="post-tag">Green Recipes</a>
+                        <a href="#" class="post-title">Easy Mouth Watering Recipes</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                            <a href="#" class="post-author">By Celine Glory</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <!-- Blog Thumbnail -->
+                <div class="blog-thumbnail">
+                    <a href="#"><img src="{% static 'grilled_chicken_salad_1600.jpg' %}" style="height: 480px; width: 480px;" alt=""></a>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="blog-content-bg">
+                    <div class="blog-content">
+                        <a href="#" class="post-tag">Green Recipes</a>
+                        <a href="#" class="post-title">Easy Mouth Watering Recipes</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                            <a href="#" class="post-author">By Celine Glory</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <!-- Blog Thumbnail -->
+                <div class="blog-thumbnail">
+                    <a href="#"><img src="{% static 'Noodle Soup Recipe.jpg' %}" style="height: 480px; width: 480px;" alt=""></a>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="blog-content-bg">
+                    <div class="blog-content">
+                        <a href="#" class="post-tag">Green Recipes</a>
+                        <a href="#" class="post-title">Easy Mouth Watering Recipes</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                            <a href="#" class="post-author">By Celine Glory</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Catagory Area Start ##### -->
+    <div class="post-catagory section-padding-100-0 mb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Single Post Catagory -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-post-catagory mb-30">
+                        <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                        <!-- Content -->
+                        <div class="catagory-content-bg">
+                            <div class="catagory-content">
+                                <a href="#" class="post-tag">The Best</a>
+                                <a href="#" class="post-title">Healthy Food</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Post Catagory -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-post-catagory mb-30">
+                        <img src="{% static 'img/bg-img/5.jpg' %}" alt="">
+                        <!-- Content -->
+                        <div class="catagory-content-bg">
+                            <div class="catagory-content">
+                                <a href="#" class="post-tag">The Best</a>
+                                <a href="#" class="post-title">Organic Cuisine</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Post Catagory -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-post-catagory mb-30">
+                        <img src="{% static 'img/bg-img/6.jpg' %}" alt="">
+                        <!-- Content -->
+                        <div class="catagory-content-bg">
+                            <div class="catagory-content">
+                                <a href="#" class="post-tag">The Best</a>
+                                <a href="#" class="post-title">Vegetarian Food</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Catagory Area End ##### -->
+
+    <!-- ##### Big Posts Area Start ##### -->
+    <div class="big-posts-area mb-50">
+        <div class="container">
+            <!-- Single Big Post Area -->
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="big-post-thumbnail mb-50">
+                        <img src="{% static 'img/bg-img/7.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="big-post-content text-center mb-50">
+                        <a href="#" class="post-tag">Green Recipe</a>
+                        <a href="#" class="post-title">Egg Veggie Platter</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                        </div>
+                        <p>Eating a wide variety of healthy foods helps to keep you in good health and protects you against chronic disease.
+
+                            Eating a well-balanced diet means eating a variety of foods from each of the 5 food groups daily, in the recommended amounts.
+                            
+                            Eating healthy food doesn't mean giving up your favourite recipes. Some simple swaps and a little bit of planning can help you make life-long, healthy changes to your diet.</p>
+                        <a href="{% url 'about' %}" class="btn bueno-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Big Post Area -->
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="big-post-content text-center mb-50">
+                        <a href="#" class="post-tag">Green Recipe</a>
+                        <a href="#" class="post-title">Steak with boiled vegetables</a>
+                        <div class="post-meta">
+                            <a href="#" class="post-date">Feb 11, 2023</a>
+                        </div>
+                        <p>Additional suggestions for healthy eating include:
+
+                            Take time out to enjoy eating, away from screens and other distractions, and eat with others when you can.
+                            You are less likely to overeat if you eat slowly and savour every mouthful.
+                            And remember small changes, big impact. Making small, gradual changes to your diet (rather than restrictive eating or crash diets) will help you adopt healthy eating habits for life.</p>
+                        <a href="{% url 'about' %}" class="btn bueno-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="big-post-thumbnail mb-50">
+                        <img src="{% static 'barbecued-steak-and-vegetables.jpeg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Big Posts Area End ##### -->
+
+
+    {% endblock %}
+    <!-- ##### Instagram Area Start ##### -->
+    <div class="instagram-feed-area d-flex flex-wrap">
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/bg-img/insta1.jpg' %}" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta1.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/1g.jpg' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="#" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/2g.jfif' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="#" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/3g.jfif' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="#" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/4g.jpg' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta5.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/5g.jpg' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta6.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/6g.jfif' %}" style="height: 250px; width: 250px;" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta7.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/bg-img/insta8.jpg' %}" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta8.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/bg-img/insta9.jpg' %}" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta9.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+
+        <!-- Single Instagram -->
+        <div class="single-instagram">
+            <img src="{% static 'img/bg-img/insta10.jpg' %}" alt="">
+            <!-- Image Zoom -->
+            <a href="img/bg-img/insta10.jpg" class="img-zoom" title="Instagram Image">+</a>
+        </div>
+    </div>
+    <!-- ##### Instagram Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-5">
+                    <!-- Copywrite Text -->
+                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+                <div class="col-12 col-sm-7">
+                    <!-- Footer Nav -->
+                    <div class="footer-nav">
+                        <ul>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Recipes</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>
